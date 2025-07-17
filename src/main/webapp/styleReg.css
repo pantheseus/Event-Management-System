@@ -1,0 +1,129 @@
+/* Reset and font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Register Form Box (Smaller Size) */
+.Register-Form {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    padding: 30px 25px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+
+.Register-Form:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+}
+
+/* Underlined Inputs */
+.Register-Form input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #aaa;
+    padding: 10px 5px;
+    margin: 14px 0;
+    font-size: 16px;
+    font-weight:bold;
+    color: #000;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.Register-Form input:focus {
+    border-bottom: 2px solid #000;
+}
+
+.Register-Form input::placeholder {
+    color: #777;
+    transition: 0.3s ease;
+}
+
+.Register-Form input:focus::placeholder {
+    color: transparent;
+}
+
+/* Error Message */
+#error {
+    font-size: 13px;
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* Submit Button */
+.RegisterButton {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    font-weight:bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.RegisterButton:hover {
+    background-color: #333;
+    transform: scale(1.02);
+}
+
+/* Link below form */
+.link-wrap {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.link-wrap a {
+    color: #000;
+    font-size: 18px;
+    font-weight:bold;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.link-wrap a:hover {
+    color: #555;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .Register-Form {
+        padding: 25px 18px;
+    }
+
+    .Register-Form input {
+        font-size: 13px;
+    }
+
+    .RegisterButton {
+        font-size: 13px;
+        padding: 9px;
+    }
+
+    .link-wrap a {
+        font-size: 12px;
+    }
+}
