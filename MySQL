@@ -1,0 +1,30 @@
+CREATE DATABASE EVENTDB;
+USE EVENTDB;
+
+CREATE TABLE events (
+    id INT AUTO_INCREMENT PRIMARY KEY,      -- Unique ID for each event, auto-incremented
+    title VARCHAR(100) NOT NULL,            -- Title of the event (max 100 characters, cannot be null)
+    description TEXT NOT NULL,              -- Detailed description (long text, required)
+    date DATE NOT NULL                      -- Date of the event in YYYY-MM-DD format (required)
+);
+
+CREATE TABLE registrations (
+    id INT AUTO_INCREMENT PRIMARY KEY,         -- Unique ID for each registration
+    user_email VARCHAR(100) NOT NULL,          -- Email of the user who registered
+    event_id INT NOT NULL,                     -- ID of the event (foreign key to events table)
+    event_name VARCHAR(100) NOT NULL,          -- Name of the event (copied for quick reference)
+    registered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- Date and time of registration (auto-filled)
+);
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,      -- Unique ID for each user (auto-incremented)
+    name VARCHAR(100) NOT NULL,             -- Full name of the user (required)
+    email VARCHAR(100) NOT NULL UNIQUE,     -- Email address (must be unique and not null)
+    password VARCHAR(255) NOT NULL          -- Password (hashed or plain, required)
+);
+
+INSERT INTO events (title, description, date) VALUES
+('Tech Talk', 'Learn about AI advancements', '2025-08-01'),
+('Hackathon', 'Build innovative solutions in teams', '2025-08-05'),
+('Design Sprint', 'Creative design and prototyping', '2025-08-10'),
+('Coding Contest', 'Compete with others in solving problems', '2025-08-15');
